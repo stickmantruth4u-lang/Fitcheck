@@ -1,0 +1,556 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #101010;
+
+    color: white;
+
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+/* ==================== HOME ==================== */
+
+.home {
+    width: 100%;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.home-header h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.home-header p {
+    color: #888;
+    font-size: 16px;
+}
+
+
+/* SERVICE GRID */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+/* SERVICE CARD */
+
+.service-card {
+    background: #1b1b1b;
+
+    border: 1px solid #2c2c2c;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    min-height: 175px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        background 0.22s ease;
+}
+
+
+/* CYBER GREEN HOVER */
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #315d42;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba(45, 110, 70, 0.18);
+
+    background: #1d1e1d;
+}
+
+
+/* ICON */
+
+.service-icon {
+    font-size: 34px;
+
+    margin-bottom: 18px;
+
+    transition: transform 0.22s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: translateY(-2px) scale(1.04);
+}
+
+
+/* CARD TEXT */
+
+.service-card h2 {
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* WIDE CARD */
+
+.wide-card {
+    grid-column: span 2;
+
+    min-height: 140px;
+}
+
+
+/* ==================== GENERAL CARD ==================== */
+
+.card {
+    background: #1b1b1b;
+
+    border: 1px solid #2c2c2c;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ==================== TITLES ==================== */
+
+h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #999;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==================== PROGRESS ==================== */
+
+.progress {
+    width: 100%;
+
+    height: 5px;
+
+    background: #333;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+
+    width: 12.5%;
+
+    background: white;
+
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* ==================== QUESTIONS ==================== */
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.question-number {
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.question h2 {
+    font-size: 24px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ==================== INPUT ==================== */
+
+input {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #444;
+
+    background: #101010;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #52745d;
+
+    box-shadow: 0 0 10px rgba(45, 110, 70, 0.12);
+}
+
+
+/* ==================== BUTTONS ==================== */
+
+button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.85;
+}
+
+
+/* SECONDARY BUTTON */
+
+.secondary-button {
+    background: #252525;
+
+    color: white;
+
+    border: 1px solid #383838;
+}
+
+.secondary-button:hover {
+    background: #292929;
+
+    opacity: 1;
+}
+
+
+/* ==================== OPTIONS ==================== */
+
+.options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.options button {
+    margin: 0;
+}
+
+
+/* ==================== RESULT ==================== */
+
+.result-card {
+    display: none;
+}
+
+.result-top {
+    margin-bottom: 25px;
+}
+
+.result-label {
+    display: inline-block;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+#categoryText {
+    color: #999;
+
+    line-height: 1.6;
+}
+
+
+/* ==================== ROUTINE ==================== */
+
+.routine-section {
+    background: #111;
+
+    border: 1px solid #292929;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    margin-bottom: 12px;
+}
+
+.routine-section h3 {
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
+
+.exercise {
+    color: #ccc;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid #242424;
+}
+
+.exercise:last-child {
+    border-bottom: none;
+}
+
+.exercise-name {
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+.exercise-details {
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* ==================== NOTE ==================== */
+
+.warning {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-top: 20px;
+}
+
+
+/* ==================== TOOLS ==================== */
+
+.tool-card {
+    display: none;
+}
+
+.tool-icon {
+    display: block;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.tool-options {
+    margin-top: 20px;
+}
+
+.tool-options h3 {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+.tool-options button {
+    margin-top: 8px;
+}
+
+
+/* ==================== TOOL RESULTS ==================== */
+
+#workoutPlan,
+#hydrationResult,
+#recoveryResult,
+#progressResult {
+    margin-top: 20px;
+}
+
+.tool-result {
+    background: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    margin-top: 15px;
+
+    line-height: 1.6;
+}
+
+.tool-result h3 {
+    margin-bottom: 10px;
+}
+
+.tool-result p {
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+/* ==================== PROGRESS TRACKER ==================== */
+
+.progress-inputs {
+    margin-top: 20px;
+}
+
+.progress-inputs label {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin: 14px 0 7px;
+}
+
+.progress-inputs input {
+    margin-bottom: 5px;
+}
+
+
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wide-card {
+        grid-column: span 1;
+    }
+
+    .service-card {
+        min-height: 150px;
+
+        padding: 22px;
+    }
+
+    .home-header h1 {
+        font-size: 36px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .question h2 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* ==================== SMALL PHONES ==================== */
+
+@media (max-width: 380px) {
+
+    .home-header h1 {
+        font-size: 32px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-icon {
+        font-size: 30px;
+    }
+
+}

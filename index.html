@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitCheck</title>
+
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg?v=3">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ==================== HOME ==================== -->
+
+    <div class="home" id="home">
+
+        <div class="home-header">
+            <h1>FitCheck</h1>
+            <p>Your Fitness Toolkit</p>
+        </div>
+
+
+        <div class="service-grid">
+
+            <!-- FITNESS CHECK -->
+
+            <div class="service-card" onclick="openService('fitness')">
+
+                <div class="service-icon">💪</div>
+
+                <h2>Fitness Check</h2>
+
+                <p>
+                    Find a workout plan based on your experience and goals.
+                </p>
+
+            </div>
+
+
+            <!-- WORKOUT PLANNER -->
+
+            <div class="service-card" onclick="openService('workout')">
+
+                <div class="service-icon">🏋️</div>
+
+                <h2>Workout Planner</h2>
+
+                <p>
+                    Build a simple weekly workout schedule.
+                </p>
+
+            </div>
+
+
+            <!-- HYDRATION -->
+
+            <div class="service-card" onclick="openService('hydration')">
+
+                <div class="service-icon">💧</div>
+
+                <h2>Hydration Helper</h2>
+
+                <p>
+                    Get an age-based daily hydration guide.
+                </p>
+
+            </div>
+
+
+            <!-- RECOVERY -->
+
+            <div class="service-card" onclick="openService('recovery')">
+
+                <div class="service-icon">😴</div>
+
+                <h2>Recovery Guide</h2>
+
+                <p>
+                    Learn about sleep, rest and recovery habits.
+                </p>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="service-card wide-card" onclick="openService('progress')">
+
+                <div class="service-icon">📈</div>
+
+                <h2>Fitness Progress</h2>
+
+                <p>
+                    Track workouts, consistency and personal milestones.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== FITNESS CHECK ==================== -->
+
+    <div class="card" id="quizCard" style="display: none;">
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <h1>FitCheck</h1>
+
+        <p class="subtitle">
+            Answer a few questions to get your starting workout routine.
+        </p>
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question active" id="question1">
+
+            <span class="question-number">1 / 8</span>
+
+            <h2>How old are you?</h2>
+
+            <input
+                type="number"
+                id="age"
+                placeholder="Enter your age"
+                min="13"
+                max="25"
+            >
+
+            <button onclick="nextQuestion(1)">
+                Continue
+            </button>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question" id="question2">
+
+            <span class="question-number">2 / 8</span>
+
+            <h2>What is your height?</h2>
+
+            <input
+                type="number"
+                id="height"
+                placeholder="Height in cm"
+                min="100"
+                max="250"
+            >
+
+            <button onclick="nextQuestion(2)">
+                Continue
+            </button>
+
+        </div>
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question" id="question3">
+
+            <span class="question-number">3 / 8</span>
+
+            <h2>What is your weight?</h2>
+
+            <input
+                type="number"
+                id="weight"
+                placeholder="Weight in kg"
+                min="20"
+                max="200"
+            >
+
+            <button onclick="nextQuestion(3)">
+                Continue
+            </button>
+
+        </div>
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="question" id="question4">
+
+            <span class="question-number">4 / 8</span>
+
+            <h2>Can you do a normal push-up?</h2>
+
+            <div class="options">
+
+                <button onclick="selectAnswer('pushups', 'yes', 4)">
+                    Yes
+                </button>
+
+                <button onclick="selectAnswer('pushups', 'no', 4)">
+                    No
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION 5 -->
+
+        <div class="question" id="question5">
+
+            <span class="question-number">5 / 8</span>
+
+            <h2>Can you do a normal pull-up?</h2>
+
+            <div class="options">
+
+                <button onclick="selectAnswer('pullups', 'yes', 5)">
+                    Yes
+                </button>
+
+                <button onclick="selectAnswer('pullups', 'no', 5)">
+                    No
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION 6 -->
+
+        <div class="question" id="question6">
+
+            <span class="question-number">6 / 8</span>
+
+            <h2>What's your experience?</h2>
+
+            <div class="options">
+
+                <button onclick="selectAnswer('experience', 'beginner', 6)">
+                    Beginner
+                </button>
+
+                <button onclick="selectAnswer('experience', 'some', 6)">
+                    Some experience
+                </button>
+
+                <button onclick="selectAnswer('experience', 'experienced', 6)">
+                    Experienced
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION 7 -->
+
+        <div class="question" id="question7">
+
+            <span class="question-number">7 / 8</span>
+
+            <h2>What equipment do you have?</h2>
+
+            <div class="options">
+
+                <button onclick="selectAnswer('equipment', 'none', 7)">
+                    No equipment
+                </button>
+
+                <button onclick="selectAnswer('equipment', 'bands', 7)">
+                    Resistance bands
+                </button>
+
+                <button onclick="selectAnswer('equipment', 'dumbbells', 7)">
+                    Dumbbells
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION 8 -->
+
+        <div class="question" id="question8">
+
+            <span class="question-number">8 / 8</span>
+
+            <h2>What's your main goal?</h2>
+
+            <div class="options">
+
+                <button onclick="selectAnswer('goal', 'fitness', 8)">
+                    General fitness
+                </button>
+
+                <button onclick="selectAnswer('goal', 'strength', 8)">
+                    Build strength
+                </button>
+
+                <button onclick="selectAnswer('goal', 'athletic', 8)">
+                    Athletic conditioning
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== RESULT ==================== -->
+
+    <div class="card result-card" id="resultCard">
+
+        <div class="result-top">
+
+            <span class="result-label">YOUR PLAN 🔥</span>
+
+            <h1 id="routineTitle">Your Routine</h1>
+
+            <p id="categoryText"></p>
+
+        </div>
+
+
+        <div id="routine"></div>
+
+
+        <button onclick="restartQuiz()">
+            Start Again
+        </button>
+
+        <button class="secondary-button" onclick="goHome()">
+            Back to Home
+        </button>
+
+    </div>
+
+
+    <!-- ==================== WORKOUT PLANNER ==================== -->
+
+    <div class="card tool-card" id="workoutTool" style="display: none;">
+
+        <span class="tool-icon">🏋️</span>
+
+        <h1>Workout Planner</h1>
+
+        <p class="subtitle">
+            Build a simple weekly workout schedule.
+        </p>
+
+        <div class="tool-options">
+
+            <h3>What's your goal?</h3>
+
+            <button onclick="showWorkoutPlan('fitness')">
+                General Fitness
+            </button>
+
+            <button onclick="showWorkoutPlan('strength')">
+                Build Strength
+            </button>
+
+            <button onclick="showWorkoutPlan('athletic')">
+                Athletic Conditioning
+            </button>
+
+        </div>
+
+        <div id="workoutPlan"></div>
+
+        <button class="secondary-button" onclick="goHome()">
+            Back to Home
+        </button>
+
+    </div>
+
+
+    <!-- ==================== HYDRATION ==================== -->
+
+    <div class="card tool-card" id="hydrationTool" style="display: none;">
+
+        <span class="tool-icon">💧</span>
+
+        <h1>Hydration Helper</h1>
+
+        <p class="subtitle">
+            Get an approximate daily fluid guide based on your age and activity.
+        </p>
+
+
+        <!-- HYDRATION AGE -->
+
+        <div class="tool-options" id="hydrationAgeStep">
+
+            <h3>How old are you?</h3>
+
+            <input
+                type="number"
+                id="hydrationAge"
+                placeholder="Enter your age"
+                min="13"
+                max="25"
+            >
+
+            <button onclick="continueHydration()">
+                Continue
+            </button>
+
+        </div>
+
+
+        <!-- HYDRATION ACTIVITY -->
+
+        <div class="tool-options" id="hydrationActivityStep" style="display: none;">
+
+            <h3>How active are you today?</h3>
+
+            <button onclick="showHydration('low')">
+                Light activity
+            </button>
+
+            <button onclick="showHydration('medium')">
+                Moderate activity
+            </button>
+
+            <button onclick="showHydration('high')">
+                High activity
+            </button>
+
+        </div>
+
+
+        <div id="hydrationResult"></div>
+
+
+        <button class="secondary-button" onclick="goHome()">
+            Back to Home
+        </button>
+
+    </div>
+
+
+    <!-- ==================== RECOVERY ==================== -->
+
+    <div class="card tool-card" id="recoveryTool" style="display: none;">
+
+        <span class="tool-icon">😴</span>
+
+        <h1>Recovery Guide</h1>
+
+        <p class="subtitle">
+            Get age-based guidance for sleep, rest and recovery.
+        </p>
+
+
+        <!-- RECOVERY AGE -->
+
+        <div class="tool-options" id="recoveryAgeStep">
+
+            <h3>How old are you?</h3>
+
+            <input
+                type="number"
+                id="recoveryAge"
+                placeholder="Enter your age"
+                min="13"
+                max="25"
+            >
+
+            <button onclick="continueRecovery()">
+                Continue
+            </button>
+
+        </div>
+
+
+        <!-- RECOVERY OPTIONS -->
+
+        <div class="tool-options" id="recoveryOptionsStep" style="display: none;">
+
+            <h3>What do you want help with?</h3>
+
+            <button onclick="showRecovery('sleep')">
+                Sleep
+            </button>
+
+            <button onclick="showRecovery('rest')">
+                Rest days
+            </button>
+
+            <button onclick="showRecovery('routine')">
+                Recovery routine
+            </button>
+
+        </div>
+
+
+        <div id="recoveryResult"></div>
+
+
+        <button class="secondary-button" onclick="goHome()">
+            Back to Home
+        </button>
+
+    </div>
+
+
+    <!-- ==================== PROGRESS ==================== -->
+
+    <div class="card tool-card" id="progressTool" style="display: none;">
+
+        <span class="tool-icon">📈</span>
+
+        <h1>Fitness Progress</h1>
+
+        <p class="subtitle">
+            Keep track of your workouts and personal milestones.
+        </p>
+
+        <div class="progress-inputs">
+
+            <label>Workouts completed</label>
+
+            <input
+                type="number"
+                id="workoutsCompleted"
+                min="0"
+                placeholder="0"
+            >
+
+            <label>Push-ups completed</label>
+
+            <input
+                type="number"
+                id="pushupsCompleted"
+                min="0"
+                placeholder="0"
+            >
+
+            <label>Pull-ups completed</label>
+
+            <input
+                type="number"
+                id="pullupsCompleted"
+                min="0"
+                placeholder="0"
+            >
+
+            <button onclick="calculateProgress()">
+                Check Progress
+            </button>
+
+        </div>
+
+        <div id="progressResult"></div>
+
+        <button class="secondary-button" onclick="goHome()">
+            Back to Home
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
